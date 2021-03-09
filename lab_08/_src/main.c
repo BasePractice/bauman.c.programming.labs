@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <memory.h>
-#include <ctype.h>
-#include <stdbool.h>
+#include <limits.h>
 #include <main.h>
 
 struct Matrix *matrix_dup(struct Matrix *src) {

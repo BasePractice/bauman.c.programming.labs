@@ -21,6 +21,6 @@ target_compile_definitions(${PROJECT_NAME}_07_main PRIVATE -DENTRY_POINT)
 
 add_executable(${PROJECT_NAME}_unit_filter unit_tests/check_filter.c src/filter.c)
 target_compile_definitions(${PROJECT_NAME}_unit_filter PRIVATE -DRIGHT)
-target_link_libraries(${PROJECT_NAME}_unit_filter ${CHECK_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_unit_filter ${CHECK_LIBRARIES} ${DEPENDENCY_LIBRARIES})
 add_test(NAME ${PROJECT_NAME}_unit_filter COMMAND ${PROJECT_NAME}_unit_sort_07 WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
 set_tests_properties(${PROJECT_NAME}_unit_filter PROPERTIES TIMEOUT 30)

@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 
     fread_struct(in, 3, build_record, &build);
     if (0 != build.prefix) {
-        if (!stricmp("ALL", build.prefix)) {
+        if (!strcmp("ALL", build.prefix)) {
             list_foreach(&list, print_element, 0);
             fprintf(stdout, "\n");
             fflush(stdout);
