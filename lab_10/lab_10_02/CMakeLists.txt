@@ -12,6 +12,6 @@ add_executable(${PROJECT_NAME}_05_main ../_src/main.c src/main05.c src/menu.c sr
 
 add_executable(${PROJECT_NAME}_unit ../_src/main.c  src/value.c src/text.c  unit_tests/check_main.c)
 target_compile_definitions(${PROJECT_NAME}_unit PRIVATE -DRIGHT)
-target_link_libraries(${PROJECT_NAME}_unit ${CHECK_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_unit ${CHECK_LIBRARIES} ${DEPENDENCY_LIBRARIES})
 add_test(NAME ${PROJECT_NAME}_unit COMMAND ${PROJECT_NAME}_unit WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
 set_tests_properties(${PROJECT_NAME}_unit PROPERTIES TIMEOUT 30)
