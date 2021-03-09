@@ -6,6 +6,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 add_executable(${PROJECT_NAME}_main ../_src/main.c ../_src/format.c ../_src/format_plain.c src/main.c)
 target_compile_definitions(${PROJECT_NAME}_main PRIVATE -DENTRY_POINT -DFORMAT_PLAIN)
+target_link_libraries(${PROJECT_NAME}_main PRIVATE ${DEPENDENCY_LIBRARIES})
 
 add_executable(${PROJECT_NAME}_unit_main unit_tests/check_main.c  ../_src/format.c  ../_src/format_plain.c ../_src/main.c src/main.c)
 target_compile_definitions(${PROJECT_NAME}_unit_main PRIVATE -DDEBUG_PRINT0 -DFORMAT_PLAIN)

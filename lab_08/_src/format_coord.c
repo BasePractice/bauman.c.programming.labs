@@ -2,8 +2,8 @@
 
 struct Matrix *fread_coord_matrix(FILE *fd, enum MatrixMemoryType type) {
     struct Matrix *m;
-    size_t rows = 0, cols = 0;
-    int i = 0, row = 0, col = 0, all = 0, val = 0;
+    long rows = 0, cols = 0;
+    long i = 0, row = 0, col = 0, all = 0, val = 0;
 
     if (feof(fd))
         return 0;
@@ -20,8 +20,8 @@ struct Matrix *fread_coord_matrix(FILE *fd, enum MatrixMemoryType type) {
 
 void fwrite_coord_matrix(FILE *fd, struct Matrix *m) {
     if (0 != fd && 0 != m) {
-        size_t all = 0;
-        int row = 0, col = 0;
+        long all = 0;
+        long row = 0, col = 0;
 
         /** Не оптимально, но зато быстро в реализации */
         for (row = 0; row < m->rows; ++row) {
@@ -32,12 +32,12 @@ void fwrite_coord_matrix(FILE *fd, struct Matrix *m) {
                 }
             }
         }
-        fprintf(fd, "%lu %lu %lu\n", m->rows, m->cols, all);
+        fprintf(fd, "%llu %llu %lu\n", m->rows, m->cols, all);
         for (row = 0; row < m->rows; ++row) {
             for (col = 0; col < m->cols; ++col) {
                 int v = matrix_get(m, row, col);
                 if (0 != v) {
-                    fprintf(fd, "%lu %lu %lu\n", row + 1, col + 1, v);
+                    fprintf(fd, "%lu %lu %d\n", row + 1, col + 1, v);
                 }
             }
         }

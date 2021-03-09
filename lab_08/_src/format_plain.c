@@ -3,8 +3,8 @@
 
 struct Matrix *fread_plain_matrix(FILE *fd, enum MatrixMemoryType type) {
     struct Matrix *m;
-    size_t rows = 0, cols = 0;
-    int row, col, tmp;
+    long rows = 0, cols = 0;
+    long row, col, tmp;
 
     if (feof(fd))
         return 0;
@@ -25,7 +25,7 @@ void fwrite_plain_matrix(FILE *fd, struct Matrix *m) {
     if (0 != m && 0 != fd) {
         int row, col;
 
-        fprintf(fd, "%lu %lu\n", m->rows, m->cols);
+        fprintf(fd, "%llu %llu\n", m->rows, m->cols);
         for (row = 0; row < m->rows; ++row) {
             for (col = 0; col < m->cols; ++col) {
                 fprintf(fd, "%d ", matrix_get(m, row, col));
