@@ -29,6 +29,7 @@ else ()
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIC ")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -fPIC ")
 endif ()
+include_directories(${CHECK_INCLUDE_DIR})
 
 add_subdirectory(lab_07)
 add_subdirectory(lab_08)

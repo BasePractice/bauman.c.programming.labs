@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <main.h>
-#include <struct.h>
 
 static int sum_cal(struct Matrix *m, int r, int c) {
     int sum = 0;
