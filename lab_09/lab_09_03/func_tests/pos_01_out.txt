@@ -1,0 +1,4 @@
+Name  : mango
+Price : 10000000
+Name  : fruit
+Price : 40

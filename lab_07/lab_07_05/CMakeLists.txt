@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.2.1)
+project(lab_07_05)
+
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+
+add_executable(${PROJECT_NAME}_01_main ../_src/main.c src/filter.c ../_src/sort_01.c)
+target_compile_definitions(${PROJECT_NAME}_01_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_02_main ../_src/main.c src/filter.c ../_src/sort_02.c)
+target_compile_definitions(${PROJECT_NAME}_02_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_03_main ../_src/main.c src/filter.c ../_src/sort_03.c)
+target_compile_definitions(${PROJECT_NAME}_03_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_04_main ../_src/main.c src/filter.c ../_src/sort_04.c)
+target_compile_definitions(${PROJECT_NAME}_04_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_05_main ../_src/main.c src/filter.c ../_src/sort_05.c)
+target_compile_definitions(${PROJECT_NAME}_05_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_06_main ../_src/main.c src/filter.c ../_src/sort_06.c)
+target_compile_definitions(${PROJECT_NAME}_06_main PRIVATE -DENTRY_POINT)
+add_executable(${PROJECT_NAME}_07_main ../_src/main.c src/filter.c ../_src/sort_07.c)
+target_compile_definitions(${PROJECT_NAME}_07_main PRIVATE -DENTRY_POINT)
+
+add_executable(${PROJECT_NAME}_unit_filter unit_tests/check_filter.c src/filter.c)
+target_compile_definitions(${PROJECT_NAME}_unit_filter PRIVATE -DRIGHT)
+target_link_libraries(${PROJECT_NAME}_unit_filter ${CHECK_LIBRARIES})
+add_test(NAME ${PROJECT_NAME}_unit_filter COMMAND ${PROJECT_NAME}_unit_sort_07 WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
+set_tests_properties(${PROJECT_NAME}_unit_filter PROPERTIES TIMEOUT 30)

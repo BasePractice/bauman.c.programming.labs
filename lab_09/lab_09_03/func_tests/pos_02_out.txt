@@ -1,0 +1,2 @@
+Name  : mango
+Price : 10000000

@@ -1,0 +1,9 @@
+Name  : cat
+Mass  : 50.000000
+Volume: 1.000000
+Name  : dop
+Mass  : 70.000000
+Volume: 10.000000
+Name  : dog
+Mass  : 100.000000
+Volume: 20.000000

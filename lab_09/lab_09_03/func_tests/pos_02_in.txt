@@ -1,0 +1,8 @@
+apple
+5
+fruit
+40
+mango
+10000000
+banana
+10
