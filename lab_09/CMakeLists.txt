@@ -4,7 +4,7 @@ project(lab_09)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/_inc)
 
 add_executable(${PROJECT_NAME}_unit_main _unit_tests/check_main.c _src/main.c)
-target_link_libraries(${PROJECT_NAME}_unit_main ${CHECK_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_unit_main ${CHECK_LIBRARIES} ${DEPENDENCY_LIBRARIES})
 add_test(NAME ${PROJECT_NAME}_unit_main COMMAND ${PROJECT_NAME}_unit_main WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
 set_tests_properties(${PROJECT_NAME}_unit_main PROPERTIES TIMEOUT 30)
 
