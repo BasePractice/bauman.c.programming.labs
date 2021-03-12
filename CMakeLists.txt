@@ -30,7 +30,11 @@ else ()
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -fPIC ")
 endif ()
 
-if (UNIX)
+#FIXME: For MocOSX, check library install with brew. Fnd this installation not automatic detected libraries and include directories
+if (APPLE)
+    set(CHECK_LIBRARIES /usr/local/lib/libcheck.a)
+    set(CHECK_INCLUDE_DIR /usr/local/include)
+elseif (UNIX)
     list(APPEND DEPENDENCY_LIBRARIES m dl pthread rt)
 endif ()
 

@@ -1,3 +1,4 @@
 .build_w64
+.build_m64
 .idea
 venv
